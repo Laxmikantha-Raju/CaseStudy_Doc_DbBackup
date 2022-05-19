@@ -1,0 +1,100 @@
+Create table tbl_UserDetails
+(
+ User_Id int primary key identity(1,1),
+ User_FirstName varchar(50),
+ User_LastName varchar(50),
+ User_Emailid varchar(50),
+ User_Password nvarchar(50),
+ User_PhoneNo varchar(13),
+ User_CreatedBy int,
+ User_CreatedOn date,
+ User_UpdatedBy int,
+ User_UpdatedOn date,
+ User_IsDeleted int,
+ User_IsAdmin varchar(2) default 'N'
+)
+-----------------------------------------------------------
+
+Create table TblAirLine
+(
+ AirlineNo int primary key identity(1,1),
+ AirlineName varchar(50),
+ AirlineUploadLogo varchar(50),
+ AirlineContactNo varchar(13),
+ AirlineContactAddress varchar(100),
+AirlineCreatedBy int,
+AirlineCreatedOn date,
+AirlineUpdatedBy int,
+AirlineUpdatedOn date,
+AirlineIsDeleted int,
+ AirlineIsActiveYN varchar(2) default 'N'
+)
+-----------------------------------------------------------------------------
+Create table TblInventory
+(
+		FlightNumber varchar(50) primary key ,
+		FlightAirlineNo int,
+		FlightFromPlace varchar(50),
+        FlightToPlace varchar(50),
+        FlightStartDateTime DateTime,
+        FlightEndDateTime DateTime,
+        FlighScheduleDays varchar(20),
+        FlightInstrumentUsed varchar(20),
+        FlightBusinessClassSeat int,
+        FlightEconomyClassSeat int,
+        FlightTicketCost float,
+        FlightNoOfRows int,
+        FlightMeal int,
+  FlightIsActiveYN varchar(2) default 'N',
+FlightCreatedBy int,
+FlightCreatedOn Datetime,
+FlightUpdatedBy int,
+FlightUpdatedOn Datetime
+)
+
+
+-----------------------------------------------------------------------------
+
+Create table tblBooking
+(
+BookingId int primary key identity(1,1),
+BookingName varchar(100),
+BookingEmailId nvarchar(100),
+BookingNoOfSeatBook int,
+BookingPassengerId int,
+BookingMeal varchar(10),
+BookingSeatNo varchar(10),
+BookingFlightNumber varchar(100),
+BookingPNR nvarchar(100),
+BookingIsActiceYN varchar(2),
+BookingCreatedBy int,
+BookingCreatedOn Datetime,
+BookingUpdatedBy int,
+BookingUpdatedOn Datetime
+)
+-----------------------------------------------------------------------------------
+Create table tblPassenger
+(
+PassengerId int primary key identity(1,1),
+PassengerPNR nvarchar(100),
+PassengerName varchar(50),
+PassengerAge int,
+PassengerGender varchar(10),
+PassengerMealType varchar(10),
+PassengerSeatNo varchar(10),
+PassengerPrice decimal,
+PassengerIsActiceYN varchar(2),
+PassengerCreatedBy int,
+PassengerCreatedOn Datetime,
+PassengerUpdatedBy int,
+PassengerUpdatedOn Datetime
+)
+
+-------------------------------------------------------------------------
+Create table tblDiscount
+(
+DiscoundID int primary key identity(1,1),
+DiscoundName varchar(20),
+DiscountCode varchar(20),
+DiscountPercentage nvarchar(20)
+)
